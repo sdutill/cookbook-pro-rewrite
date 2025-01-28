@@ -1,11 +1,7 @@
-{% extends "base.html" %}
-
-{% block title %}Home{% endblock title %}
-
-{% block content %}
-{% if user.is_authenticated %}
+{% extends "base.html" %} {% block title %}Home{% endblock title %} {% block
+content %} {% if user.is_authenticated %}
 <!-- new code here! -->
-Hi {{ user.username }}! your cooking expereince is  {{ user.cooking_experience}} 
+Hi {{ user.username }}! your cooking expereince is {{ user.cooking_experience}}
 <!-- end of new code -->
 <form action="{% url 'logout' %}" method="post">
   {% csrf_token %}
@@ -15,5 +11,4 @@ Hi {{ user.username }}! your cooking expereince is  {{ user.cooking_experience}}
 <p>You are not logged in</p>
 <a href="{% url 'login' %}">Log In</a> |
 <a href="{% url 'signup' %}">Sign Up</a>
-{% endif %}
-{% endblock content %}
+{% endif %} {% endblock content %}
