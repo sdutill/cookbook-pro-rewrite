@@ -1,15 +1,14 @@
-{% extends "base.html" %} {% load crispy_forms_tags %} {% block title %}Sign
-Up{% endblock title %} {% block content %}
-<h2 class="text-3xl font-bold mb-6">Sign Up</h2>
-
-<form method="post" class="space-y-4">
-  {% csrf_token %} {{ form|crispy }}
-
-  <button
-    class="w-full bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 mt-4"
-    type="submit"
-  >
-    Sign Up
-  </button>
-</form>
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}
+    Sign
+    Up
+{% endblock title %}
+{% block content %}
+    <h2 class="text-3xl font-bold mb-6">Sign Up</h2>
+    <form method="post" class="space-y-4">
+        {% csrf_token %} {{ form|crispy }}
+        <button class="w-full bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 mt-4"
+                type="submit">Sign Up</button>
+    </form>
 {% endblock content %}
