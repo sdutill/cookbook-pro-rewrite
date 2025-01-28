@@ -1,16 +1,17 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
+
 # Create your models here.
 class CustomUser(AbstractUser):
-    BEGINNER = 'Beginner'
-    INTERMEDIATE = 'Intermediate'
-    ADVANCED = 'Advanced'
+    BEGINNER = "Beginner"
+    INTERMEDIATE = "Intermediate"
+    ADVANCED = "Advanced"
 
     COOKING_EXPERIENCE_CHOICES = [
-        (BEGINNER, 'Beginner'),
-        (INTERMEDIATE, 'Intermediate'),
-        (ADVANCED, 'Advanced'),
+        (BEGINNER, "Beginner"),
+        (INTERMEDIATE, "Intermediate"),
+        (ADVANCED, "Advanced"),
     ]
 
     cooking_experience = models.CharField(
@@ -20,4 +21,4 @@ class CustomUser(AbstractUser):
     )
 
     def __str__(self):
-        return self.username + ' (' + self.cooking_experience + ')'
+        return self.username + " (" + self.cooking_experience + ")"
