@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  {% load static %}
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +9,9 @@
     <meta name="keywords"
           content="cookbook, recipes, cooking, food, ingredients, meals" />
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="icon"
+          type="image/svg+xml"
+          href="{% static 'icons/cookbook.svg' %}">
     <title>
       {% block title %}
         Cookbook-Pro

@@ -77,6 +77,10 @@ TEMPLATES = [
     },
 ]
 
+STATICFILES_DIRS = [
+    BASE_DIR / "assets",
+]
+
 WSGI_APPLICATION = "Cookbook-Pro.wsgi.application"
 
 
