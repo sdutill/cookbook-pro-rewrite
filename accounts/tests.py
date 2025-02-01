@@ -59,6 +59,4 @@ class SignupPageTests(TestCase):  # new
         self.assertEqual(get_user_model().objects.all().count(), 1)
         self.assertEqual(get_user_model().objects.all()[0].username, "testuser")
         self.assertEqual(get_user_model().objects.all()[0].email, "testuser@email.com")
-        self.assertEqual(
-            get_user_model().objects.all()[0].cooking_experience, "Advanced"
-        )
+        self.assertEqual(get_user_model().objects.all()[0].cooking_experience, "Advanced")
