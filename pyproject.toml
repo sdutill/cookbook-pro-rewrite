@@ -4,7 +4,6 @@ line-length = 100
 skip-string-normalization = true
 include = '\.pyi?$'
 target-version = ['py39']
-empty_line_after_nested_class_or_def = false
 
 [tool.djlint]
 indent = 2
