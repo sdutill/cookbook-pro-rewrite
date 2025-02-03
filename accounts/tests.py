@@ -60,3 +60,20 @@ class SignupPageTests(TestCase):  # new
         self.assertEqual(get_user_model().objects.all()[0].username, "testuser")
         self.assertEqual(get_user_model().objects.all()[0].email, "testuser@email.com")
         self.assertEqual(get_user_model().objects.all()[0].cooking_experience, "Advanced")
+
+
+class ChangePassword_Pages(TestCase):
+    def test_password_reset_complete(self):
+        response = self.client.get("/accounts/reset/done/")
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "registration/password_reset_complete.html")
+
+    def test_password_reset_form(self):
+        response = self.client.get("/accounts/password_reset/")
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "registration/password_reset_form.html")
+
+    def test_password_reset_done(self):
+        response = self.client.get("/accounts/password_reset/done/")
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "registration/password_reset_done.html")
