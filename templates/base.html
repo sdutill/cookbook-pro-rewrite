@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+          content="A cookbook application for managing and sharing recipes" />
+    <meta name="keywords"
+          content="cookbook, recipes, cooking, food, ingredients, meals" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="icon"
+          type="image/svg+xml"
+          href="{% static 'icons/cookbook.svg' %}" />
+    <title>
+      {% block title %}
+
+        Cookbook-Pro
+      {% endblock title %}
+    </title>
+  </head>
+  <body>
+    {% include "./nav/nav.html" %}
+
+    <main>
+      <div class="container mx-auto p-4">
+        {% block content %}
+
+        {% endblock content %}
+      </div>
+    </main>
+    {% if user.is_authenticated %}
+      <script>
+          const dropdownButton = document.querySelector('[aria-haspopup="true"]');
+          const dropdownMenu = document.getElementById("user-menu");
+
+          dropdownButton.addEventListener("click", () => {
+              dropdownMenu.classList.toggle("hidden");
+          });
+      </script>
+    {% endif %}
+    {% block extra_js %}
+
+    {% endblock extra_js %}
+  </body>
+</html>
